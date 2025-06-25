@@ -8,6 +8,7 @@ import (
 
 func main() {
 	http.HandleFunc("/ping", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Access-Control-Allow-Origin", "*")
 		jsonResponse(w, map[string]string{
 			"status":  "ok",
 			"service": "1",
@@ -15,6 +16,7 @@ func main() {
 	})
 
 	http.HandleFunc("/hello", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Access-Control-Allow-Origin", "*")
 		jsonResponse(w, map[string]string{
 			"message": "Hello from Service 1",
 		})

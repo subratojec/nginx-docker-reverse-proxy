@@ -1,6 +1,7 @@
 version: '3'
 
 services:
+  # Go service
   service_1:
     build: ./service_1
     container_name: service_1
@@ -12,6 +13,7 @@ services:
       retries: 3
       start_period: 5s
   
+  # Python Service
   service_2:
     build: ./service_2
     container_name: service_2
@@ -23,6 +25,7 @@ services:
       retries: 3
       start_period: 5s
     
+# Reverse Proxy using Nginx 
   nginx:
     build: ./nginx
     container_name: nginx_reverse_proxy
