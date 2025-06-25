@@ -6,7 +6,7 @@ RUN pip install --no-cache-dir uv
 
 COPY . /app
 
-RUN uv sync --frozen
+# RUN uv sync --frozen
 
 RUN apt update && apt install -y curl && rm -rf /var/lib/apt/lists/*
 
